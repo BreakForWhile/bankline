@@ -5,6 +5,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Objects;
 
 @Entity
 @Data
@@ -16,9 +17,6 @@ public class Lancamento {
 
     private LocalDate data;
     private String descricao;
-
-    @Enumerated(EnumType.STRING)
-    private TipoMovimento tipoMovimento;
     private double valor;
 
     @ManyToOne
@@ -27,6 +25,27 @@ public class Lancamento {
     @OneToOne
     private PlanoConta planoConta;
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Lancamento that = (Lancamento) o;
+        return Objects.equals(id, that.id);
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 
+    @Override
+    public String toString() {
+        return "Lancamento{" +
+                "id=" + id +
+                ", data=" + data +
+                ", descricao='" + descricao + '\'' +
+                ", valor=" + valor +
+                ", planoConta=" + planoConta +
+                '}';
+    }
 }

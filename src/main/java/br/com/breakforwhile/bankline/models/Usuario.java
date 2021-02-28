@@ -1,7 +1,7 @@
 package br.com.breakforwhile.bankline.models;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
+
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,6 +22,8 @@ public class Usuario {
     private boolean redefinirSenha;
     private String senha;
     private String senhaTemporaria;
+
+
 
 
 }
