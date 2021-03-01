@@ -4,17 +4,35 @@ INSERT INTO cliente(id, name) VALUES (100002, 'André');
 INSERT INTO cliente(id, name) VALUES (100003, 'Rodrigo');
 INSERT INTO cliente(id, name) VALUES (100004, 'Rafael');
 INSERT INTO cliente(id, name) VALUES (100005, 'Erika');
-INSERT INTO cliente(id, name) VALUES (100006, 'Sumido'); 
-
-INSERT INTO USUARIO (id, cpf, login, nome, redefinir_senha, senha, senha_temporaria) VALUES(1, '54545454', 'teste', 'nome', '1', '123', '');
-INSERT INTO USUARIO (id, cpf, login, nome, redefinir_senha, senha, senha_temporaria) VALUES(2, '54545454', 'teste', 'nome', '1', '123', '');
-INSERT INTO USUARIO (id, cpf, login, nome, redefinir_senha, senha, senha_temporaria) VALUES(3, '54545454', 'teste', 'nome', '1', '123', '');
-INSERT INTO USUARIO (id, cpf, login, nome, redefinir_senha, senha, senha_temporaria) VALUES(4, '54545454', 'teste', 'nome', '1', '123', '');
-
-INSERT INTO CONTA(ID, DATA, DESCRICAO, NUMERO, USUARIO_ID )VALUES(1, DATE '2001-01-01', 'CONTA DE TESTE1', 'teste1', 1);
-INSERT INTO CONTA(ID, DATA, DESCRICAO, NUMERO, USUARIO_ID )VALUES(2, DATE '2001-01-01', 'CONTA DE TESTE2', 'teste2', 2);
+INSERT INTO cliente(id, name) VALUES (100006, 'Sumido');
 
 
+INSERT INTO USUARIO (id, cpf, login, nome, redefinir_senha, senha, senha_temporaria) VALUES(1, '46057326083', 'teste1', 'nome', '1', '123', '');
+INSERT INTO USUARIO (id, cpf, login, nome, redefinir_senha, senha, senha_temporaria) VALUES(2, '49756960027', 'teste2', 'nome', '1', '123', '');
+INSERT INTO USUARIO (id, cpf, login, nome, redefinir_senha, senha, senha_temporaria) VALUES(3, '57411757080', 'teste3', 'nome', '1', '123', '');
+INSERT INTO USUARIO (id, cpf, login, nome, redefinir_senha, senha, senha_temporaria) VALUES(4, '13071675003', 'teste4', 'nome', '1', '123', '');
+
+
+INSERT INTO CONTA(TIPO_CONTA, ID, DATA, DESCRICAO, NUMERO, USUARIO_ID )VALUES('1', 1, DATE '2001-01-01', 'CONTA DE TESTE1', 'teste1', 1);
+INSERT INTO CONTA(TIPO_CONTA, ID, DATA, DESCRICAO, NUMERO, USUARIO_ID )VALUES('2', 2, DATE '2001-01-01', 'CONTA DE TESTE2', 'teste1', 1);
+
+
+INSERT INTO PLANO_CONTA(TIPO_PLANO, ID, DESCRICAO, LOGIN, PADRAO, TIPO_MOVIMENTO )VALUES('1', 1, 'Sálario dia 05', 'teste1', 1, 'RECEITA');
+INSERT INTO PLANO_CONTA(TIPO_PLANO, ID, DESCRICAO, LOGIN, PADRAO, TIPO_MOVIMENTO )VALUES('2', 2, 'Pagamento da conta de internet', 'teste1', 1, 'DESPESA');
+INSERT INTO PLANO_CONTA(TIPO_PLANO, ID, DESCRICAO, LOGIN, PADRAO, TIPO_MOVIMENTO )VALUES('2', 3, 'Pagamento da conta de luz', 'teste1', 1, 'DESPESA');
+INSERT INTO PLANO_CONTA(TIPO_PLANO, ID, DESCRICAO, LOGIN, PADRAO, TIPO_MOVIMENTO )VALUES('2', 4, 'Pagamento fatura cartão de crédito', 'teste1', 1, 'DESPESA');
+INSERT INTO PLANO_CONTA(TIPO_PLANO, ID, DESCRICAO, LOGIN, PADRAO, TIPO_MOVIMENTO )VALUES('1', 5, 'Adiantamento do salário', 'teste1', 1, 'RECEITA');
+
+
+INSERT INTO LANCAMENTO(ID, DATA, DESCRICAO, TIPO, VALOR, CONTA_ID, PLANO_CONTA_ID )VALUES(1, DATE '2001-01-05', 'Sálario dia 05'                     , 'RECEITA', 4000.00, 1, 1);
+INSERT INTO LANCAMENTO(ID, DATA, DESCRICAO, TIPO, VALOR, CONTA_ID, PLANO_CONTA_ID )VALUES(2, DATE '2001-01-10', 'Pagamento da conta de internet'     , 'DESPESA', 200.66,  2, 2);
+INSERT INTO LANCAMENTO(ID, DATA, DESCRICAO, TIPO, VALOR, CONTA_ID, PLANO_CONTA_ID )VALUES(3, DATE '2001-01-15', 'Pagamento da conta de luz'          , 'DESPESA', 52.66,   2, 3);
+INSERT INTO LANCAMENTO(ID, DATA, DESCRICAO, TIPO, VALOR, CONTA_ID, PLANO_CONTA_ID )VALUES(4, DATE '2001-01-20', 'Pagamento fatura cartão de crédito' , 'DESPESA', 1690.85, 2, 4);
+INSERT INTO LANCAMENTO(ID, DATA, DESCRICAO, TIPO, VALOR, CONTA_ID, PLANO_CONTA_ID )VALUES(5, DATE '2001-01-10', 'Adiantamento do salário'            , 'RECEITA', 1500.00, 1, 5);
+
+
+
+/*
 INSERT INTO CONTA_CREDITO(ID)VALUES(1);
 INSERT INTO CONTA_DEBITO (ID)VALUES(2);
 
@@ -30,7 +48,7 @@ INSERT INTO LANCAMENTO(ID, DATA, DESCRICAO, VALOR, CONTA_ID, PLANO_CONTA_ID )VAL
 INSERT INTO LANCAMENTO(ID, DATA, DESCRICAO, VALOR, CONTA_ID, PLANO_CONTA_ID )VALUES(2, DATE '2001-01-01', 'Salário', 1055.66, 1, 2);
 
 
-
+*/
 
 
 

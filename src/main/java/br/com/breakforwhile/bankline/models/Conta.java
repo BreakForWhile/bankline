@@ -1,6 +1,7 @@
 package br.com.breakforwhile.bankline.models;
 
 import br.com.breakforwhile.bankline.models.enums.TipoConta;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -10,7 +11,8 @@ import java.util.List;
 import java.util.Objects;
 
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "tipo_conta", discriminatorType = DiscriminatorType.INTEGER)
 public abstract class Conta {
 
     @Id
@@ -19,10 +21,12 @@ public abstract class Conta {
 
     private LocalDate data;
     private String descricao;
+
     private String numero;
 
     @ManyToOne
     private Usuario usuario;
+
 
     @OneToMany(mappedBy = "conta")
     private List<Lancamento> lancamentos = new ArrayList<>();
@@ -98,3 +102,4 @@ public abstract class Conta {
                 '}';
     }
 }
+

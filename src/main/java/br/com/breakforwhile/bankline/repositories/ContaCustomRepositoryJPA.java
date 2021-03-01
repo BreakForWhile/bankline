@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface ContaCustomRepositoryJPA {
 
-    List<Conta> findByNumero(String numero);
+    List<Conta> findAllByNumero(String numero);
 
 }
