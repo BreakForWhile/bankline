@@ -1,7 +1,11 @@
 package br.com.breakforwhile.bankline.restcontrollers;
 
-import br.com.breakforwhile.bankline.models.DTO.PlanoContaDTO;
+import br.com.breakforwhile.bankline.models.DTO.LancamentoDTO;
+
+import br.com.breakforwhile.bankline.models.Lancamento;
 import br.com.breakforwhile.bankline.models.PlanoConta;
+import br.com.breakforwhile.bankline.models.PlanoContaDespesa;
+import br.com.breakforwhile.bankline.models.PlanoContaReceita;
 import br.com.breakforwhile.bankline.services.LancamentoService;
 import br.com.breakforwhile.bankline.services.PlanoContaService;
 import org.springframework.http.HttpStatus;
@@ -22,14 +26,26 @@ public class LancamentoRestController {
         this.planoContaService = planoContaService;
     }
 
+    @PostMapping
+    public ResponseEntity<Lancamento> saveLancamento(@RequestBody LancamentoDTO lancamentoDTO){
+
+
+        return new ResponseEntity<>(null, HttpStatus.CREATED);
+    }
+
     @GetMapping("/planos-conta")
     public ResponseEntity<List<PlanoConta>> findAllPlanoDeContasByLogin(@RequestParam String login){
         return new ResponseEntity<>(planoContaService.findAllByLogin(login), HttpStatus.OK);
     }
 
-    @PostMapping("/planos-conta")
-    public ResponseEntity<PlanoConta> salvePlanoConta(@RequestBody PlanoContaDTO planoConta){
-
-        return new ResponseEntity<>(null, HttpStatus.CREATED);
+    @PostMapping("/planos-conta-despesa")
+    public ResponseEntity<PlanoConta> savePlanoContaDespesa(@RequestBody PlanoContaDespesa planoContaDespesa){
+        return new ResponseEntity<>(planoContaService.save(planoContaDespesa), HttpStatus.CREATED);
     }
+
+    @PostMapping("/planos-conta-receita")
+    public ResponseEntity<PlanoConta> salvePlanoContaReceita(@RequestBody PlanoContaReceita planoContaReceita){
+        return new ResponseEntity<>(planoContaService.save(planoContaReceita), HttpStatus.CREATED);
+    }
+
 }

@@ -39,10 +39,13 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                //.antMatchers("/lancamentos/*").permitAll();
-                //.antMatchers(HttpMethod.GET, "/lancamentos/*").permitAll()
+                .antMatchers("/**").permitAll()
+                .antMatchers(HttpMethod.POST, "/lancamentos/*").permitAll()/*
+                .antMatchers("/h2-console/*").permitAll()
+                .antMatchers(HttpMethod.GET, "/lancamentos/*").permitAll()
                 .antMatchers(HttpMethod.POST, "/auth").permitAll()
-                .anyRequest().authenticated()
+                .anyRequest().authenticated()*/
+
                 .and().csrf().disable()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and().addFilterBefore(new AutenticacaoViaTokenFilter(tokenService, usuarioRepositoryJPA), UsernamePasswordAuthenticationFilter.class);

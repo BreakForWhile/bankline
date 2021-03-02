@@ -10,7 +10,6 @@ public class PlanoContaDTOToPlanoContaConverter implements Converter<PlanoContaD
 
     @Override
     public PlanoConta convert(PlanoContaDTO planoContaDTO) {
-        System.out.println(planoContaDTO.getTipoMovimento());
         return null;
     }
 
