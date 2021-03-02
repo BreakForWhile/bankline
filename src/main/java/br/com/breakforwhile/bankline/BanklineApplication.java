@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
@@ -72,7 +73,7 @@ public class BanklineApplication implements CommandLineRunner {
 		//planos.forEach( p -> System.out.println(p) );
 
 
-
+		//System.out.println(new BCryptPasswordEncoder().encode("123456"));
 
 	}
 }

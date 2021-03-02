@@ -7,10 +7,10 @@ INSERT INTO cliente(id, name) VALUES (100005, 'Erika');
 INSERT INTO cliente(id, name) VALUES (100006, 'Sumido');
 
 
-INSERT INTO USUARIO (id, cpf, login, nome, redefinir_senha, senha, senha_temporaria) VALUES(1, '46057326083', 'teste1', 'nome', '1', '123', '');
-INSERT INTO USUARIO (id, cpf, login, nome, redefinir_senha, senha, senha_temporaria) VALUES(2, '49756960027', 'teste2', 'nome', '1', '123', '');
-INSERT INTO USUARIO (id, cpf, login, nome, redefinir_senha, senha, senha_temporaria) VALUES(3, '57411757080', 'teste3', 'nome', '1', '123', '');
-INSERT INTO USUARIO (id, cpf, login, nome, redefinir_senha, senha, senha_temporaria) VALUES(4, '13071675003', 'teste4', 'nome', '1', '123', '');
+INSERT INTO USUARIO (id, cpf, login, nome, redefinir_senha, senha, senha_temporaria) VALUES(1, '46057326083', 'teste1', 'nome', '1', '$2a$10$iE1BrbxdHuWrtKcZ5JWkAeRhIzbI3AGg3Jk1CqDjF86HfjGlTybjS', ''); -- 123456
+INSERT INTO USUARIO (id, cpf, login, nome, redefinir_senha, senha, senha_temporaria) VALUES(2, '49756960027', 'teste2', 'nome', '1', '$2a$10$iE1BrbxdHuWrtKcZ5JWkAeRhIzbI3AGg3Jk1CqDjF86HfjGlTybjS', '');
+INSERT INTO USUARIO (id, cpf, login, nome, redefinir_senha, senha, senha_temporaria) VALUES(3, '57411757080', 'teste3', 'nome', '1', '$2a$10$iE1BrbxdHuWrtKcZ5JWkAeRhIzbI3AGg3Jk1CqDjF86HfjGlTybjS', '');
+INSERT INTO USUARIO (id, cpf, login, nome, redefinir_senha, senha, senha_temporaria) VALUES(4, '13071675003', 'teste4', 'nome', '1', '$2a$10$iE1BrbxdHuWrtKcZ5JWkAeRhIzbI3AGg3Jk1CqDjF86HfjGlTybjS', '');
 
 
 INSERT INTO CONTA(TIPO_CONTA, ID, DATA, DESCRICAO, NUMERO, USUARIO_ID )VALUES('1', 1, DATE '2001-01-01', 'CONTA DE TESTE1', 'teste1', 1);
