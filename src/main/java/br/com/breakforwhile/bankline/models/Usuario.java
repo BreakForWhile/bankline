@@ -18,7 +18,10 @@ public class Usuario implements UserDetails {
     private Long id;
 
     private String cpf;
+
+    @Column(unique = true)
     private String login;
+
     private String nome;
     private boolean redefinirSenha;
     private String senha;
@@ -65,6 +68,22 @@ public class Usuario implements UserDetails {
 
     public void setSenhaTemporaria(String senhaTemporaria) {
         this.senhaTemporaria = senhaTemporaria;
+    }
+
+    public boolean isRedefinirSenha() {
+        return redefinirSenha;
+    }
+
+    public void setRedefinirSenha(boolean redefinirSenha) {
+        this.redefinirSenha = redefinirSenha;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 
     @Override
