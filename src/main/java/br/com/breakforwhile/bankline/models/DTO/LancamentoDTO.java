@@ -1,6 +1,7 @@
 package br.com.breakforwhile.bankline.models.DTO;
 
 import br.com.breakforwhile.bankline.models.Lancamento;
+import br.com.breakforwhile.bankline.models.enums.TipoMovimento;
 
 import java.time.LocalDate;
 
@@ -13,6 +14,7 @@ public class LancamentoDTO {
     private String login;
     private Long planoConta;
     private double valor;
+    private TipoMovimento tipo;
 
 
     public Long getConta() {
@@ -71,13 +73,20 @@ public class LancamentoDTO {
         this.valor = valor;
     }
 
-    public Lancamento toLancamento(LancamentoDTO lancamentoDTO){
+    public TipoMovimento getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(TipoMovimento tipo) {
+        this.tipo = tipo;
+    }
+
+    public Lancamento toLancamento(){
         Lancamento lancamento = new Lancamento();
-        lancamento.setPlanoConta(null);
-        lancamento.setConta(null);
-        lancamento.setData(lancamentoDTO.getData());
-        lancamento.setDescricao(lancamentoDTO.getDescricao());
-        //lancamento.setTipo(lancamentoDTO.get);
+        lancamento.setData(this.getData());
+        lancamento.setDescricao(this.getDescricao());
+        lancamento.setTipo(this.getTipo());
+        lancamento.setValor(this.getValor());
         return lancamento;
     }
 }

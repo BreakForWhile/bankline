@@ -26,11 +26,15 @@ public class LancamentoRestController {
         this.planoContaService = planoContaService;
     }
 
+    @GetMapping("/{idConta}")
+    public ResponseEntity<List<Lancamento>> findAllLancamentosByIdConta(@PathVariable Long idConta){
+        return new ResponseEntity<List<Lancamento>>(lancamentoService.findAllByIdConta(idConta), HttpStatus.OK);
+    }
+
     @PostMapping
     public ResponseEntity<Lancamento> saveLancamento(@RequestBody LancamentoDTO lancamentoDTO){
-
-
-        return new ResponseEntity<>(null, HttpStatus.CREATED);
+        Lancamento lancamento = lancamentoService.save(lancamentoDTO);
+        return new ResponseEntity<>(lancamento, HttpStatus.CREATED);
     }
 
     @GetMapping("/planos-conta")

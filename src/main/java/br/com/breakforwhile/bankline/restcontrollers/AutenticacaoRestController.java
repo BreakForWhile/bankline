@@ -33,11 +33,9 @@ public class AutenticacaoRestController {
         try{
             Authentication authenticate = authenticationManager.authenticate(usernamePasswordAuthenticationToken);
             String token = tokenService.gerarToken(authenticate);
-            System.out.println(token);
             return ResponseEntity.ok(new TokenDTO(token, "Bearer"));
         }
         catch(AuthenticationException e){
-            System.out.println(e.getMessage());
             return ResponseEntity.badRequest().build();
         }
 
